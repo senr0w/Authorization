@@ -18,6 +18,7 @@ namespace Authorization
             LoadUsers();
             RegBtn.Hide();
             label3.Hide();
+            ShowPass.Hide();
         }
         public class User
         {
@@ -31,7 +32,7 @@ namespace Authorization
             string enteredPassword = textPass.Text;
 
             // Проверка введенного логина и пароля
-            User user = users.Find(u => u.Username == enteredUsername && u.Password == enteredPassword);
+            User user = users.Find( u => u.Username == enteredUsername && u.Password == enteredPassword);
 
             if (user != null)
             {
@@ -129,6 +130,24 @@ namespace Authorization
             RegBtn.Hide();
             label2.Show();
             label3.Hide();
+        }
+
+        private void HideEye_Click(object sender, EventArgs e)
+        {
+            textPass.PasswordChar = (char)0;
+            ShowPass.Show();
+            HideEye.Hide();
+        }
+
+        private void ShowPass_Click(object sender, EventArgs e)
+        {
+           if (textPass.PasswordChar == (char)0)
+            {
+                textPass.PasswordChar = '●';
+            
+            }
+            ShowPass.Hide();
+            HideEye.Show();
         }
     }
 }

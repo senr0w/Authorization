@@ -39,13 +39,17 @@
             this.EnterBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.HideEye = new System.Windows.Forms.PictureBox();
+            this.ShowPass = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HideEye)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowPass)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -56,8 +60,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Snow;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(158, 6);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -85,7 +90,7 @@
             this.textLogin.Location = new System.Drawing.Point(164, 106);
             this.textLogin.Multiline = true;
             this.textLogin.Name = "textLogin";
-            this.textLogin.Size = new System.Drawing.Size(167, 28);
+            this.textLogin.Size = new System.Drawing.Size(167, 25);
             this.textLogin.TabIndex = 2;
             // 
             // Pass
@@ -108,7 +113,8 @@
             this.textPass.Location = new System.Drawing.Point(164, 166);
             this.textPass.Multiline = true;
             this.textPass.Name = "textPass";
-            this.textPass.Size = new System.Drawing.Size(167, 28);
+            this.textPass.PasswordChar = '●';
+            this.textPass.Size = new System.Drawing.Size(167, 24);
             this.textPass.TabIndex = 4;
             // 
             // panel2
@@ -178,16 +184,42 @@
             this.label3.MouseEnter += new System.EventHandler(this.OnMouseEnter);
             this.label3.MouseLeave += new System.EventHandler(this.OnMouseLeave);
             // 
+            // HideEye
+            // 
+            this.HideEye.BackColor = System.Drawing.Color.Transparent;
+            this.HideEye.Image = global::Authorization.Properties.Resources.eye_hide_line_icon_235644;
+            this.HideEye.Location = new System.Drawing.Point(335, 168);
+            this.HideEye.Name = "HideEye";
+            this.HideEye.Size = new System.Drawing.Size(20, 20);
+            this.HideEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HideEye.TabIndex = 8;
+            this.HideEye.TabStop = false;
+            this.HideEye.Click += new System.EventHandler(this.HideEye_Click);
+            // 
+            // ShowPass
+            // 
+            this.ShowPass.BackColor = System.Drawing.Color.Transparent;
+            this.ShowPass.Image = global::Authorization.Properties.Resources.eye_icon_176955;
+            this.ShowPass.Location = new System.Drawing.Point(335, 168);
+            this.ShowPass.Name = "ShowPass";
+            this.ShowPass.Size = new System.Drawing.Size(20, 20);
+            this.ShowPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ShowPass.TabIndex = 9;
+            this.ShowPass.TabStop = false;
+            this.ShowPass.Click += new System.EventHandler(this.ShowPass_Click);
+            // 
             // Authorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(483, 296);
+            this.Controls.Add(this.ShowPass);
+            this.Controls.Add(this.HideEye);
+            this.Controls.Add(this.textPass);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.textPass);
             this.Controls.Add(this.Pass);
             this.Controls.Add(this.textLogin);
             this.Controls.Add(this.Login);
@@ -201,6 +233,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.HideEye)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowPass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,6 +253,8 @@
         private System.Windows.Forms.Button RegBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox HideEye;
+        private System.Windows.Forms.PictureBox ShowPass;
     }
 }
 

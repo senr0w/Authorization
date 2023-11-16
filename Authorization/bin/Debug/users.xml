@@ -4,4 +4,12 @@
     <Username>А знаешь что?</Username>
     <Password>Иди ты</Password>
   </User>
+  <User>
+    <Username>senr0w</Username>
+    <Password>parol</Password>
+  </User>
+  <User>
+    <Username>121</Username>
+    <Password>121</Password>
+  </User>
 </ArrayOfUser>
