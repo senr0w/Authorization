@@ -37,6 +37,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.RegBtn = new System.Windows.Forms.Button();
             this.EnterBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -127,7 +129,7 @@
             this.RegBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.RegBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RegBtn.Location = new System.Drawing.Point(104, 7);
+            this.RegBtn.Location = new System.Drawing.Point(180, 7);
             this.RegBtn.Name = "RegBtn";
             this.RegBtn.Size = new System.Drawing.Size(134, 32);
             this.RegBtn.TabIndex = 7;
@@ -142,7 +144,7 @@
             this.EnterBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.EnterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EnterBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EnterBtn.Location = new System.Drawing.Point(280, 7);
+            this.EnterBtn.Location = new System.Drawing.Point(195, 7);
             this.EnterBtn.Name = "EnterBtn";
             this.EnterBtn.Size = new System.Drawing.Size(100, 32);
             this.EnterBtn.TabIndex = 6;
@@ -150,12 +152,40 @@
             this.EnterBtn.UseVisualStyleBackColor = false;
             this.EnterBtn.Click += new System.EventHandler(this.EnterBtn_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Cyan;
+            this.label2.Location = new System.Drawing.Point(181, 206);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Создать новый аккаунт?";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.label2.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.SkyBlue;
+            this.label3.Location = new System.Drawing.Point(192, 206);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Уже есть аккаунт?";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label3.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.label3.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            // 
             // Authorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(483, 296);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.textPass);
             this.Controls.Add(this.Pass);
@@ -167,6 +197,7 @@
             this.Text = "authorization";
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Authorization_FormClosed);
+            this.Load += new System.EventHandler(this.Authorization_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -186,6 +217,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button EnterBtn;
         private System.Windows.Forms.Button RegBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -15,6 +16,8 @@ namespace Authorization
         {
             InitializeComponent();
             LoadUsers();
+            RegBtn.Hide();
+            label3.Hide();
         }
         public class User
         {
@@ -68,6 +71,8 @@ namespace Authorization
                 textPass.Text = "";
                 MessageBox.Show("Вы успешно зарегистрировались", "Успех");
             }
+            EnterBtn.Show();
+            RegBtn.Hide();
         }
         private void LoadUsers()
         {
@@ -93,6 +98,37 @@ namespace Authorization
         private void Authorization_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Authorization_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            EnterBtn.Hide();
+            RegBtn.Show();
+            label2.Hide();
+            label3.Show();
+        }
+        private void OnMouseEnter(object sender, EventArgs e)
+        {
+            label2.Font = new Font(label2.Font,  FontStyle.Underline);
+            label3.Font = new Font(label3.Font, FontStyle.Underline);
+        }
+        private void OnMouseLeave(object sender, EventArgs e)
+        {
+            label2.Font = new Font(label2.Font,  FontStyle.Regular);
+            label3.Font = new Font(label3.Font, FontStyle.Regular);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            EnterBtn.Show();
+            RegBtn.Hide();
+            label2.Show();
+            label3.Hide();
         }
     }
 }
