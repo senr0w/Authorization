@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Media;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WMPLib;
+
 
 namespace Authorization
 {
@@ -21,6 +13,7 @@ namespace Authorization
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            //Windows Media Player на форме для проигрования заставки при авторизации
             Player1.URL = "Video.mp4";
             Player1.uiMode = "none";
             Player1.settings.playCount = 1000;
@@ -29,11 +22,13 @@ namespace Authorization
             Player1.Enabled = false;
         }
 
+        //Выход из данного окна,на окно авторизации/регистрации
         private void ExitBtn_Click(object sender, EventArgs e)
         {   Authorization form = new Authorization();
             form.Show();
             this.Close();
         }
+
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
