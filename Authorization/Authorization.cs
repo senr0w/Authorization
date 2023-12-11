@@ -16,7 +16,7 @@ namespace Authorization
         {
             InitializeComponent();
             LoadUsers();
-            //При загрузке приложения спрятаны кнопка регистрации,надпись "Уже есть аккаунт?" и скрыт пароль в поле ввода
+            //При загрузке приложения автоматически спрятаны кнопка регистрации,надпись "Уже есть аккаунт?" и скрыт пароль в поле ввода
             RegBtn.Hide();
             label3.Hide();
             ShowPass.Hide();
@@ -40,9 +40,14 @@ namespace Authorization
                 //Открывается окно "Login" с заставкой 
                 Login newForm = new Login();
                 newForm.Show();
+                //Автроизированный пользователь в окне Login
+                newForm.ChangeLabel(this.textLogin.Text);
                 //После входа поля очищаются
                 textLogin.Text = "";
-                textPass.Text = "";
+                textPass.Text = "";         
+
+           
+
                 this.Hide();
             }
             else
@@ -50,6 +55,7 @@ namespace Authorization
                 MessageBox.Show("Неверный логин или пароль", "Ошибка");
             }
         }
+ 
 
         private void RegBtn_Click(object sender, EventArgs e)
         {
@@ -104,11 +110,6 @@ namespace Authorization
         private void Authorization_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void Authorization_Load(object sender, EventArgs e)
-        {
-
         }
 
         //При нажатии на "Создать новый аккаунт?" текущий текст меняется на другой и появляется кнопка регистрации
@@ -166,6 +167,11 @@ namespace Authorization
            //Смена глаз
             ShowPass.Hide();
             HideEye.Show();
+        }
+
+        private void Authorization_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

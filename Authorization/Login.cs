@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Emit;
 using System.Windows.Forms;
 
 
@@ -20,6 +21,7 @@ namespace Authorization
             Player1.settings.autoStart = true;
             Player1.enableContextMenu = false;
             Player1.Enabled = false;
+        
         }
 
         //Выход из данного окна,на окно авторизации/регистрации
@@ -29,7 +31,10 @@ namespace Authorization
             this.Close();
         }
 
-
+        public void ChangeLabel(string s)
+        {
+            LbLogin.Text = s;
+        }
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
